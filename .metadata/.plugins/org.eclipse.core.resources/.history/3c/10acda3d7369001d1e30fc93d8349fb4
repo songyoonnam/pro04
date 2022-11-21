@@ -1,0 +1,7 @@
+package com.lotte.controller;
+
+@Controller
+@RequestMapping("/member/*")
+public class MemberController {
+
+}

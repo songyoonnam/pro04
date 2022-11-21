@@ -1,0 +1,16 @@
+package com.lotte.dao;
+
+import java.util.List;
+
+import com.lotte.dto.MemberDTO;
+import com.lotte.service.MemberService;
+
+public class MemberDAOimpl implements MemberService {
+
+	@Override
+	public List<MemberDTO> memberList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

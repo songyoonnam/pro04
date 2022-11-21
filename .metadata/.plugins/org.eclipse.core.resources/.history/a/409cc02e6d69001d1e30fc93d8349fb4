@@ -1,0 +1,14 @@
+package com.lotte.myapp;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class JDBCConn {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
