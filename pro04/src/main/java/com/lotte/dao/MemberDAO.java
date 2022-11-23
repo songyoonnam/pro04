@@ -6,4 +6,6 @@ import com.lotte.dto.MemberDTO;
 
 public interface MemberDAO {
 	public List<MemberDTO> memberList() throws Exception;
+
+	public MemberDTO getMember(String id);
 }

@@ -15,7 +15,7 @@ import com.lotte.myapp.mapper.TimeMapper;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/**/root-context.xml")
 public class MybatisTest {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = (Logger) LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
 	private TimeMapper timeMapper;

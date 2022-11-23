@@ -1,0 +1,10 @@
+package com.lotte.controller;
+
+@Controller
+@RequestMapping("/sample/*")
+public class SampleController {
+
+	@RequestMapping("main")
+	
+	
+}
