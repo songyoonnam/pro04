@@ -4,7 +4,7 @@
 	<select id="boardList" resultType="com.lotte.dto.BoardDTO">
 		select * from board
 	</select>
-	<select id="getBoard" resultType="com.lotte.dto.BoardDTO">
+	<select id="boardDetail" resultType="com.lotte.dto.BoardDTO">
 	select * from board where seq=#{seq}
 	</select>
 	
