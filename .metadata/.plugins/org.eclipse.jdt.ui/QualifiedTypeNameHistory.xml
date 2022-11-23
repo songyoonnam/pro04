@@ -6,8 +6,6 @@
 <fullyQualifiedTypeName name="org.sonatype.aether.spi.log.Logger"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
-<fullyQualifiedTypeName name="org.codehaus.plexus.logging.Logger"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.lotte.dao.MemberDAO"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
@@ -19,4 +17,7 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="com.lotte.dto.MemberDTO"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="org.codehaus.plexus.logging.Logger"/>
+<fullyQualifiedTypeName name="com.lotte.dto.SampleDTO"/>
 </qualifiedTypeNameHistroy>
