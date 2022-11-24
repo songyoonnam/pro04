@@ -8,6 +8,18 @@
 	select * from board where seq=#{seq}
 	</select>
 	
+	<select id="boardInsert" resultType="com.lotte.dto.BoardDTO">
+	insert into board values((select nvl(max(seq), 0)+1, #{title}, #{content}, 'admin', sysdate, #{visited});
+	</select>
+	
+	<select id="boardDelete" resultType="com.lotte.dto.BoardDTO">
+	select * from board where seq=#{seq}
+	</select>
+	
+	<select id="boardModify" resultType="com.lotte.dto.BoardDTO">
+	insert into board values((select nvl(max(seq), 0)+1, #{title}, #{content}, 'admin', sysdate, #{visited});
+	</select>
+	
 </mapper>
 
 <!-- namespace나 해당 명령의 id는 중복되면 절대 안됨 -->

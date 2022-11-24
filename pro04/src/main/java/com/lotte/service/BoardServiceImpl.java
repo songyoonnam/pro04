@@ -25,4 +25,20 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.boardDetail(seq);
 	}
 	
+	@Override
+	public BoardDTO boardInsert(int seq) throws Exception {
+		return boardDao.boardInsert(seq);
+	}
+	
+	@Override
+	public BoardDTO boardModify(int seq) throws Exception {
+		return boardDao.boardModify(seq);
+	}
+
+	@Override
+	public BoardDTO boardDelete(int seq) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

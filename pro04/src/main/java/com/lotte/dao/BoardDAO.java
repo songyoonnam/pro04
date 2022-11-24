@@ -8,4 +8,8 @@ public interface BoardDAO {
 	public List<BoardDTO> boardList() throws Exception;
 
 	public BoardDTO boardDetail(int seq);
+
+	public BoardDTO boardModify(int seq);
+
+	public BoardDTO boardInsert(int seq);
 }
