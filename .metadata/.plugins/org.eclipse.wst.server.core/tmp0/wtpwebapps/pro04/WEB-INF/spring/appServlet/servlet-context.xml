@@ -21,6 +21,7 @@
 					<resources mapping="/qna/**" location="/WEB-INF/views/qna" />
 						<resources mapping="/databank/**" location="/WEB-INF/views/databank" />
 							<resources mapping="/util/**" location="/WEB-INF/views/util" />
+						<resources mapping="/sample/**" location="/WEB-INF/views/sample" />
 							
 
 	<!-- 리졸버에 대한 접두사와 접미사 결정 Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

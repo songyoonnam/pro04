@@ -9,3 +9,4 @@ public interface BoardService {
 	public BoardDTO boardDetail(int seq) throws Exception;
 	
 }
+

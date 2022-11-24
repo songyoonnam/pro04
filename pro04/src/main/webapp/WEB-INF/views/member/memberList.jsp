@@ -19,10 +19,8 @@
 <body>
 
 <script src="${path1 }/include/jquery.js"></script>
-<script src="${path1 }/include/jquery.js"></script>
-<script src="${path1 }/include/jquery.js"></script>
-<script src="${path1 }/include/jquery.js"></script>
-<script src="${path1 }/include/jquery.js"></script>
+<script src="${path1 }/include/foundation.js"></script>
+
 
 <div>
 <table>
