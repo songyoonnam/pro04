@@ -13,6 +13,7 @@
 	<title>글 수정하기</title>
     <!-- 헤드 부분 인클루드 -->
     <jsp:include page="../include/head.jsp"></jsp:include>
+        <script type="text/javascript" src="${path1 }/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<header id="header">
@@ -39,6 +40,9 @@
 			      			<th style="background-color:#dcdcdc">글 내용</th>
 			      			<td>
 			      				<textarea name="content" id="content" placeholder="내용 입력" rows="8" cols="100" maxlength="800" required>${dto.content }</textarea>
+			      				<script>
+			      				CKEDITOR.replace('content', {filebrowserUploadUrl:'/free/imageUpload.do'});
+			      				</script>
 			      			</td>
 			      		</tr>
 			      		<tr>

@@ -1,8 +1,19 @@
 package com.lotte.controller;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +21,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.lotte.dto.FreeDTO;
 import com.lotte.service.FreeService;
@@ -53,7 +68,7 @@ public class FreeController {
 	
 	@GetMapping("delete.do")
 	public String freeDelete(HttpServletRequest request, Model model) throws Exception {
-		int seq = Integer.parseInt(request.getParameter("bno"));
+		int bno = Integer.parseInt(request.getParameter("bno"));
 		freeService.freeDelete(bno);
 		
 		return "redirect:list.do";
@@ -80,4 +95,96 @@ public class FreeController {
 		return "redirect:list.do";
 	}
 	
+	
+	@RequestMapping(value="imageUpload.do", method = RequestMethod.POST)
+	public void imageUpload(HttpServletRequest request, HttpServletResponse response, MultipartHttpServletRequest multiFile, @RequestParam MultipartFile upload) throws Exception {
+		UUID uid = UUID.randomUUID();
+		
+		OutputStream out = null;
+		PrintWriter printWriter = null;
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		try {
+			String fileName = upload.getOriginalFilename();
+			byte[] bytes = upload.getBytes();
+			
+			String path = "D:nsy/pro04/pro04/src/main/webapp/resources/upload"+"ckImg/";
+			String CkUploadPath = path + uid + "_" + fileName;
+			File folder = new File(path);
+			System.out.println("path: "+path);
+			
+			if(!folder.exists()) {
+				try {
+					folder.mkdirs();
+				} catch(Exception e) {
+					e.getStackTrace();
+				}
+			}
+			
+			out = new FileOutputStream(new File(ckUploadPath));
+			out.write(bytes);
+			out.flush();
+			
+			String callback = request.getParameter("CKEditorFucNum");
+			printWriter = response.getWriter();
+			String fileUrl = "/free/ckImgSubmit.do?uid=" + uid + "&fileName=" + fileName;
+			
+			printWriter.println("{/"fileName/" : / "" +fileName+ "/" , /"uploaded/" : 1, /"url/" : /""+fileUrl+"/"}");
+			printWriter.flush();
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try
+			if(out != null) {out.close();}
+			if(printerWriter != null) {printerWriter.close();}
+		} catch(IOException e) {e.printStackTrace();}
+		
+		}
+		return;
+	
+}
+
+	@RequestMapping(value="ckImgSubmit.do")
+	public void ckSubmit(@RequestParam(value="uid") String uid, @RequestParam(value="fileName") String fileName, HTTPServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+		String path = "D:nsy/pro04/pro04/src/main/webapp/resources/upload"+"ckImg/";
+		System.out.println("path: "+path);
+		String sDirPath = path + uid + "_" + fileName;
+		
+		File imgFile = new File(sDirPath);
+		
+		if(imgFile.isFile()) {
+			byte[] buf = new byte[1024];
+			int readByte = 0;
+			int length = 0;
+			byte[] imgBuf = null;
+			
+			FileInputStream fileInputStream = null;
+			ByteArrayOutputStream ouputStream = null;
+			ServletOutputStream out = null;
+			
+			try {
+				fileInputStream = new fileInputStream(imgFile);
+				outputStream = new ByteArrayOutputStram();
+				out = response.getOutputStream();
+				
+				while((readByte = fileInputStream.read(out)) != -1) {
+					outputStream.write(buf, 0, readByte);
+				}
+				imgBuf = outputStream.toByteArray();
+				length = imgBuf.length;
+				out.write(imgBuf, 0, length);
+				out.flush();
+			} catch(IOException e) {
+				e.printStackTrace();
+			} finally {
+				outputStream.close();
+				fileInputStream.close();
+				out.close();
+			}
+		}
+	}	
 }
