@@ -42,7 +42,7 @@
 	 
 	
 	<!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
-	<context:component-scan base-package="com.lotte.myapp" />
+	<context:component-scan base-package="com.lotte" />
 	
 	
 	<!-- 트랜잭션 및 DB 패키지 방안 설정 그리고 각종 로깅과 보안 설정-->

@@ -15,3 +15,8 @@ insert into board values ((select nvl(max(seq), 0)+1 from board), '基敲 臂 力格2
 insert into board values ((select nvl(max(seq), 0)+1 from board), '基敲 臂 力格3', '基敲 臂 郴侩', 'admin', sysdate, 0);
 
 commit;
+
+
+create table free(bno number primary key, title varchar2(150) not null, content varchar2(1000) not null, nickname varchar2(100), regdate date default sysdate, visited number default 0, rec number default 0);
+
+select * from free;
