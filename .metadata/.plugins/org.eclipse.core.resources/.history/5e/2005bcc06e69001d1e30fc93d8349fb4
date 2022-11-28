@@ -1,5 +1,0 @@
-package com.lotte.myapp.mapper;
-
-public interface TimeMapper {
-	@Select("SELECT sysdate FROM dual");
-}

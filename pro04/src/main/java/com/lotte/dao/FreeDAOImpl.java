@@ -19,8 +19,10 @@ public class FreeDAOImpl implements FreeDAO {
 		return sqlSession.selectList("free.freeList");
 	}
 
+	@Transactional
 	@Override
 	public FreeDTO freeDetail(int bno) throws Exception {
+		sqlSession.update("free.visitCount", bno);
 		return sqlSession.selectOne("free.freeDetail", bno);
 	}
 

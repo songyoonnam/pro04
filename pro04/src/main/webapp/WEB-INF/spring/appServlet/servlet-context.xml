@@ -50,4 +50,7 @@
 	
 	<!-- 트랜잭션 및 DB 패키지 방안 설정 그리고 각종 로깅과 보안 설정-->
 	
+	<!--  -->
+	<beans:bean id="sampleInterceptor" class=""></beans:bean>
+	
 </beans:beans>

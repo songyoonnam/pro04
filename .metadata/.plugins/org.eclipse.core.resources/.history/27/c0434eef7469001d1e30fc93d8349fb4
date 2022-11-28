@@ -1,7 +1,0 @@
-package com.lotte.service;
-
-public interface MemberService {
-	public List<MemberDTO> memberList() throws Exception;
-	
-	
-}
