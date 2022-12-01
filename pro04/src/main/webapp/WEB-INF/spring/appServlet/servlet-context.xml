@@ -46,7 +46,7 @@
 	</beans:bean>
 		
 	<!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
-	<context:component-scan base-package="com.cj" />
+	<context:component-scan base-package="com.lotte" />
 	
 	<!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
 	<beans:bean id="sampleInterceptor" class="com.lotte.util.SampleInterceptor" />

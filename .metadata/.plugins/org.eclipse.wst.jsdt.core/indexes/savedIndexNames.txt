@@ -1,13 +1,7 @@
 INDEX VERSION 1.4+D:\nsy\pro04\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1582296421.index
 2494420623.index
 89180294.index
-3751829982.index
-1196209978.index
 1326690220.index
-327527237.index
-596914286.index
 153153998.index
 3934938141.index
 1390241447.index
-2368852507.index

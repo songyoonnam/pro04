@@ -14,8 +14,8 @@ import com.lotte.service.MemberService;
 @Repository
 public class MemberDAOImpl implements MemberService {
 
-@Autowired
-SqlSession sqlSession;
+	@Autowired
+	SqlSession sqlSession;
 
 	
 	@Override
