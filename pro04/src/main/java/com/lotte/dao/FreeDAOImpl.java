@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lotte.dto.FreeDTO;
 
@@ -39,5 +40,17 @@ public class FreeDAOImpl implements FreeDAO {
 	@Override
 	public void freeEdit(FreeDTO dto) throws Exception {
 		sqlSession.update("free.freeEdit", dto);
+	}
+
+	@Override
+	public List<FreeDTO> boardList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FreeDTO boardDetail(int bno) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

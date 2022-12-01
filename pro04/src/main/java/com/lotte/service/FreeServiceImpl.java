@@ -20,8 +20,8 @@ public class FreeServiceImpl implements FreeService {
 	}
 
 	@Override
-	public FreeDTO freeDetail(int bno) throws Exception {
-		return freeDAO.freeDetail(bno);
+	public FreeDTO freeDetail(int seq) throws Exception {
+		return freeDAO.freeDetail(seq);
 	}
 
 	@Override
@@ -30,8 +30,8 @@ public class FreeServiceImpl implements FreeService {
 	}
 
 	@Override
-	public void freeDelete(int bno) throws Exception {
-		freeDAO.freeDelete(bno);
+	public void freeDelete(int seq) throws Exception {
+		freeDAO.freeDelete(seq);
 	}
 
 	@Override
