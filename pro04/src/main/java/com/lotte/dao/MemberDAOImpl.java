@@ -31,38 +31,36 @@ public class MemberDAOImpl implements MemberService {
 
 	@Override
 	public void memberInsert(MemberDTO member) {
-		// TODO Auto-generated method stub
-		
+		//return sqlSession.insert("member.memberInsert");
 	}
 
 	@Override
 	public MemberDTO signIn(MemberDTO mdto) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.insert("member.signIn");
 	}
 
 	@Override
 	public boolean login(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return false;
+		return sqlSession.selectOne("member.login");
 	}
 
 	@Override
 	public MemberDTO loginCheck(MemberDTO mdto) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("member.loginCheck");
 	}
 
 	@Override
 	public void memberUpdate(MemberDTO mdto) {
-		// TODO Auto-generated method stub
+		return sqlSession.update("member.memberUpdate");
 		
 	}
-
+	
 	@Override
 	public void memberDelete(String id) {
-		// TODO Auto-generated method stub
+		return sqlSession.delete("member.memberDelete", id);
 		
 	}
 	
 }
+
+

@@ -1,0 +1,28 @@
+package com.lotte.dao;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.lotte.dto.MemberDTO;
+
+public interface MemberDAO {
+	public List<MemberDTO> memberList() throws Exception;
+
+	public MemberDTO getMember(String id);
+	
+	
+	public void memberInsert(MemberDTO member);
+	
+	public MemberDTO signIn(MemberDTO mdto);
+
+	public boolean login(HttpServletRequest req);
+
+	public MemberDTO loginCheck(MemberDTO mdto);
+
+	public void memberUpdate(MemberDTO mdto);
+	
+	public void memberDelete(String id);
+	
+	
+}

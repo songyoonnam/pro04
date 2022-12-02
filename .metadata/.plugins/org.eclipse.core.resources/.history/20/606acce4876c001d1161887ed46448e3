@@ -1,5 +1,0 @@
-package com.lotte.service;
-
-public interface FreeService {
-
-}
